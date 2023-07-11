@@ -1,68 +1,18 @@
-#include "main.h"
-/**
- *_strlen - count array
- *@s: array of elements
- *Return: 1
- */
-
-int _strlen(char *s)
-{
-unsigned int i;
-
-i = 0;
-while (s[i] != '\0') /*count character of string*/
-{
-i++;
-}
-
-return (i);
-}
+#include <stdio.h>
 
 /**
- *_strcpy - copy arrays
- *@src: array of elements
- *@dest: dest array
- *Return: dest
- */
+* main - prints all arguments it received
+*@argc: argument count
+*@argv: argument vector
+*Return: returns 0
+*/
 
-char *_strcpy(char *dest, char *src)
+int main(int argc, char *argv[])
 {
-int i = 0;
+		int i;
 
-while (src[i] != '\0')
-{
-dest[i] = src[i];
-i++;
-}
-dest[i] = '\0';
+		for (i = 0; i < argc; i++)
+			printf("%s\n", argv[i]);
 
-return (dest);
-}
-
-/**
- *_strdup - array for prints a string
- *@str: array of elements
- *Return: pointer
- */
-
-char *_strdup(char *str)
-{
-char *dst;
-unsigned int size;
-
-if (str == 0)
-{
-return (NULL);
-}
-
-size = _strlen(str) + 1;
-
-dst = (char *) malloc(size *sizeof(char));
-
-if (dst == 0)
-{
-return (NULL);
-}
-_strcpy(dst, str);
-return (dst);
+		return (0);
 }
